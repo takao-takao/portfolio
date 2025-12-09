@@ -1,0 +1,203 @@
+/* =========================
+   Base
+========================= */
+
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+/* =========================
+   Navigation
+========================= */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0 0 80px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+}
+
+/* =========================
+   Typography
+========================= */
+
+h1 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+
+.work-title {
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 2px;
+}
+
+.work-caption {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Gallery
+========================= */
+
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.work {
+  margin-bottom: 72px;
+}
+
+/* =========================
+   Image Layouts (GRID)
+========================= */
+
+.work-images {
+  display: grid;
+  gap: 16px;
+}
+
+/* 横2 */
+.layout-2-landscape {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 横3 */
+.layout-3-landscape {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 縦に積む（展示・記録） */
+.stack {
+  grid-template-columns: 1fr;
+}
+
+/* 縦2列（※ 切り取らない！） */
+.layout-2-vertical {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* =========================
+   Image behavior（超重要）
+========================= */
+
+.work-images img {
+  width: 100%;
+  height: auto;          /* ← 自然な縦横比 */
+  display: block;
+}
+
+/* 縦1 + 横複数レイアウト */
+.layout-portrait-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* 左の縦写真 */
+.layout-portrait-left .portrait {
+  grid-row: span 2; /* ← 横2枚なら2 */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 切らない */
+}
+
+/* 画像共通 */
+.layout-portrait-left img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  nav ul {
+    margin-bottom: 48px;
+  }
+
+  .gallery {
+    margin: 40px auto;
+  }
+
+  .work {
+    margin-bottom: 56px;
+  }
+
+  /* ★ 横3だけスマホで1列に */
+  .layout-3-landscape {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+
+/* =========================
+   Home
+========================= */
+
+.home {
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.home h1 {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+.home-lead {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 48px;
+}
+
+.home-link {
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+}
+
+/* =========================
+   About
+========================= */
+
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
