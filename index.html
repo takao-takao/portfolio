@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Takao</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <nav>
+  <!-- グローバルナビ（全ページ共通） -->
+  <nav class="global-nav">
     <ul>
       <li><a href="index.html" class="is-active">Home</a></li>
       <li><a href="work.html">Work</a></li>
@@ -18,13 +18,8 @@
 
   <main class="home">
     <h1>Takao</h1>
-
     <p class="home-lead">
       Photographer / Visual Artist<br>
       Based in Tokyo
     </p>
-
-    <a class="home-link" href="work.html">View Works</a>
-  </main>
-</body>
-</html>
+    <!-- Work を押すと Work ページ（＝下段サブナビ付き）へ -->
