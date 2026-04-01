@@ -10,23 +10,36 @@ body {
   color: #000;
 }
 
+
 /* =========================
-   Navigation
+   Global Navigation
 ========================= */
 
-nav ul {
+.global-nav {
+  padding: 20px 40px 8px;
+}
+
+.global-nav ul {
   list-style: none;
   display: flex;
   gap: 24px;
   padding: 0;
-  margin: 0 0 80px 0;
+  margin: 0;
 }
 
-nav a {
+.global-nav a {
   text-decoration: none;
   color: #000;
   font-size: 13px;
+  opacity: 0.8;
 }
+
+.global-nav a.is-active {
+  opacity: 1;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+}
+
 
 /* =========================
    Typography
@@ -51,6 +64,47 @@ h1 {
   margin-bottom: 12px;
 }
 
+
+/* =========================
+   Work Header (2nd row)
+========================= */
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px 28px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.work-main-title {
+  font-size: 28px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.work-subnav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.work-subnav a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #333;
+  opacity: 0.8;
+}
+
+.work-subnav a.is-active {
+  opacity: 1;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+}
+
+
 /* =========================
    Gallery
 ========================= */
@@ -62,10 +116,12 @@ h1 {
 
 .work {
   margin-bottom: 72px;
+  scroll-margin-top: 45px;
 }
 
+
 /* =========================
-   Image Layouts (GRID)
+   Image Layouts (Grid)
 ========================= */
 
 .work-images {
@@ -73,37 +129,27 @@ h1 {
   gap: 16px;
 }
 
-/* 横2 */
 .layout-2-landscape {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* 横3 */
 .layout-3-landscape {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* 縦に積む（展示・記録） */
-.stack {
-  grid-template-columns: 1fr;
-}
-
-/* 縦2列（※ 切り取らない！） */
 .layout-2-vertical {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* =========================
-   Image behavior（超重要）
-========================= */
-
-.work-images img {
-  width: 100%;
-  height: auto;          /* ← 自然な縦横比 */
-  display: block;
+.stack {
+  grid-template-columns: 1fr;
 }
 
-/* 縦1 + 横複数レイアウト */
+
+/* =========================
+   Portrait + Landscape combo
+========================= */
+
 .layout-portrait-left {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -111,16 +157,14 @@ h1 {
   align-items: stretch;
 }
 
-/* 左の縦写真 */
 .layout-portrait-left .portrait {
-  grid-row: span 2; /* ← 横2枚なら2 */
+  grid-row: span 2;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 切らない */
+  object-fit: contain;
 }
 
-/* 画像共通 */
-.layout-portrait-left img {
+.work-images img {
   width: 100%;
   height: auto;
   display: block;
@@ -128,32 +172,41 @@ h1 {
 
 
 /* =========================
-   Mobile
+   Photography Horizontal Scroll
 ========================= */
 
-@media screen and (max-width: 768px) {
+.photo-scroll {
+  display: flex;
+  gap: 32px;
+  padding: 40px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: calc(100vh - 260px);
+  scroll-snap-type: x proximity;
+}
 
-  body {
-    padding: 20px;
-  }
+.photo-scroll a {
+  flex: 0 0 auto;
+  height: 100%;
+  min-width: 400px; /* 最小幅を設定 */
+  max-width: 750px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center; /* 画像を中央揃え */
+  scroll-snap-align: start;
+}
 
-  nav ul {
-    margin-bottom: 48px;
-  }
+.photo-scroll a:hover {
+  opacity: 0.85;
+}
 
-  .gallery {
-    margin: 40px auto;
-  }
-
-  .work {
-    margin-bottom: 56px;
-  }
-
-  /* ★ 横3だけスマホで1列に */
-  .layout-3-landscape {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
+/* 横スクロールの画像 - 高さ統一 */
+.photo-scroll img {
+  height: 100%;
+  width: auto;
+  max-width: 750px;
+  object-fit: contain;
+  display: block;
 }
 
 
@@ -187,19 +240,19 @@ h1 {
   padding-bottom: 2px;
 }
 
+
 /* =========================
    About
 ========================= */
 
+.about {
+  max-width: 800px;
+  margin: 120px auto;
+}
 
 .about p {
   font-size: 13px;
   line-height: 1.6;
-}
-
-.about {
-  max-width: 800px;
-  margin: 120px auto;
 }
 
 .about-image {
@@ -210,4 +263,97 @@ h1 {
   width: 100%;
   height: auto;
   display: block;
+}
+
+
+/* =========================
+   Film / Video
+========================= */
+
+.film-gallery {
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+.film-work {
+  margin-bottom: 96px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-top: 16px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 13px;
+  color: #999;
+}
+
+.film-captures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.film-captures img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  .global-nav {
+    padding: 16px 20px 6px;
+  }
+
+  .work-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 20px;
+  }
+
+  .work-main-title {
+    font-size: 20px;
+  }
+
+  .layout-3-landscape {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-scroll a {
+    width: 85vw;
+  }
+
+  .film-captures {
+    grid-template-columns: 1fr;
+  }
 }
