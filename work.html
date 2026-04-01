@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>Portfolio - Takao's Portfolio</title>
-
-  <!-- CSSを読み込む -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Work - Takao</title>
   <link rel="stylesheet" href="style.css">
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">  <!-- ← 追加 -->
-  <title>Portfolio - Takao's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
- <nav>
+
+  <!-- グローバルナビ -->
+  <nav class="global-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="work.html" class="is-active">Work</a></li>
@@ -24,94 +18,98 @@
   </nav>
 
 
-  
-  <main class="work-page">
-    <h1>Work</h1>
-    <p>Photography</p>
-    
-  <!-- 作品の画像を入れる場所 -->
-  <div class="gallery">
+  <!-- Work専用ヘッダー -->
+  <header class="work-header">
+    <div class="work-main-title"></div>
+    <nav class="work-subnav">
+      <ul>
+        <li class="is-active">Photography</li>
+        <li><a href="film.html">Film / Video</a></li>
+        <li><a href="exhibitions.html">Exhibitions</a></li>
+      </ul>
+    </nav>
+  </header>
 
-
-      <section class="work">
-    <h2 class="work-title">Glamorous sex appeal</h2>
-    <p class="work-caption">
-      2024 <br>
-      model/styling : sora
-    </p>
-
-    <div class="work-images layout-2-landscape">
-      <img src="img/p18a.jpg" alt="Glamorous sex appeal"  />
-      <img src="img/p18.jpg" alt="Glamorous sex appeal"  />
-    </div>
-
-
-      </section> 
-
-                    <section class="work">
-    <h2 class="work-title">fashion snap 01</h2>
-    <p class="work-caption">
-      2024 <br>
-      model : ayano yoshimi 
-    </p>
-
-    <div class="work-images layout-2-vertical">
-    <img src="img/p34.jpg" alt="fashion snap vol.0"  />
-    <img src="img/p35.jpg" alt="fashion snap vol.0"  />
-    <img src="img/p36.jpg" alt="fashion snap vol.0"  />
-    <img src="img/p37.jpg" alt="fashion snap vol.0"  />
-    
-    </div>
-  </section> 
-
+  <!-- 横スクロール（最初に表示） -->
+  <section class="photo-scroll">
+    <a href="#glamorous"><img src="img/p18a.jpg" alt=""></a>
+    <a href="#snap01"><img src="img/p34.jpg" alt=""></a>
+    <a href="#mad"><img src="img/p22.jpg" alt=""></a>
+    <a href="#untitled"><img src="img/p2a.jpg" alt=""></a>
+    <a href="#athoos"><img src="img/p5.jpg" alt=""></a>
   </section>
 
-        <section class="work">
-    <h2 class="work-title">Untitled</h2>
-    <p class="work-caption">
-      2024 <br>
-      model : hiroaki shimizu
-    </p>
+  <!-- 縦スクロール作品一覧 -->
+  <main class="gallery">
 
-    <div class="work-images layout-2-landscape">
-      <img src="img/p2a.jpg" alt="Untitled"  />
-      <img src="img/p2.jpg" alt="Untitled"  />
-    </div>
-  </section>
+    <section class="work" id="glamorous">
+      <h2 class="work-title">Glamorous sex appeal</h2>
+      <p class="work-caption">
+        2024<br>
+        model / styling : sora
+      </p>
+      <div class="work-images layout-2-landscape">
+        <img src="img/p18a.jpg" alt="">
+        <img src="img/p18.jpg" alt="">
+      </div>
+    </section>
 
+    <section class="work" id="snap01">
+      <h2 class="work-title">fashion snap 01</h2>
+      <p class="work-caption">
+        2024<br>
+        model : ayano yoshimi
+      </p>
+      <div class="work-images layout-2-vertical">
+        <img src="img/p34.jpg" alt="">
+        <img src="img/p35.jpg" alt="">
+        <img src="img/p36.jpg" alt="">
+        <img src="img/p37.jpg" alt="">
+      </div>
+    </section>
 
-          <section class="work">
-    <h2 class="work-title">DOROTHY</h2>
-    <p class="work-caption">
-      2024 <br>
-      art direction : sora
-    </p>
+    <section class="work" id="untitled">
+      <h2 class="work-title">Untitled</h2>
+      <p class="work-caption">
+        2024<br>
+        model : hiroaki shimizu
+      </p>
+      <div class="work-images layout-2-landscape">
+        <img src="img/p2a.jpg" alt="">
+        <img src="img/p2.jpg" alt="">
+      </div>
+    </section>
 
-    <div class="work-images layout-3-landscape">
-      <img src="img/p6.jpg" alt="DOROTHY"  />
-      <img src="img/p6a.jpg" alt="DOROTHY"  />
-      <img src="img/p6b.jpg" alt="DOROTHY"  />
-      <img src="img/p6c.jpg" alt="DOROTHY"  />
-      <img src="img/p40.jpg" alt="DOROTHY"  />
-    </div>
-  </section>
+    <section class="work" id="dorothy">
+      <h2 class="work-title">DOROTHY</h2>
+      <p class="work-caption">
+        2024<br>
+        art direction : sora
+      </p>
+      <div class="work-images layout-3-landscape">
+        <img src="img/p6.jpg" alt="">
+        <img src="img/p6a.jpg" alt="">
+        <img src="img/p6b.jpg" alt="">
+        <img src="img/p6c.jpg" alt="">
+        <img src="img/p40.jpg" alt="">
+      </div>
+    </section>
 
+    <section class="work" id="athoos">
+      <h2 class="work-title">ATHOOS</h2>
+      <p class="work-caption">
+        2024<br>
+        art direction : sora
+      </p>
+      <div class="work-images layout-portrait-left">
+        <img src="img/p5.jpg" alt="">
+        <img src="img/p39.jpg" alt="" class="portrait">
+      </div>
+    </section>
 
-<section class="work">
-    <h2 class="work-title">ATHOOS</h2>
-    <p class="work-caption">
-      2024 <br>
-      art direction:sora
-    </p>
+    <!-- 以降の作品もこの <section class="work"> 構造で追加 -->
 
-    <div class="work-images layout-portrait-left">
-    <img src="img/p5.jpg" alt="ATHOOS" />
-     <img src="img/p39.jpg" alt="ATHOOS" class="portrait"  >
-    
-    </div>
-  </section>
-
-    <section class="work">
+    <section class="work" id="tsumura">
     <h2 class="work-title">鬼灯ノ道</h2>
     <p class="work-caption">
       2025 <br>
@@ -125,7 +123,8 @@
     </div>
   </section>
 
-    <section class="work">
+
+    <section class="work" id="workwind">
     <h2 class="work-title">Work of the Wind.</h2>
     <p class="work-caption">
       2024 <br>
@@ -138,7 +137,8 @@
     </div>
   </section>
     
-        <section class="work">
+
+        <section class="work" id="lunch">
     <h2 class="work-title">Lunch time is not over</h2>
     <p class="work-caption">
       2024 <br>
@@ -156,7 +156,7 @@
   </section>
          
 
-         <section class="work">
+         <section class="work" id="mad">
     <h2 class="work-title">MAD TENSION THEORY</h2>
     <p class="work-caption">
       2025 <br>
@@ -171,7 +171,7 @@
     </div>
   </section>  
 
-           <section class="work">
+           <section class="work" id="shiraki">
     <h2 class="work-title"> Fashion Collection by Yu Shiraki</h2>
     <p class="work-caption">
       2023 <br>
@@ -184,7 +184,7 @@
   </section>  
      
     
-            <section class="work">
+            <section class="work" id="kuusou">
     <h2 class="work-title">空想する紙 </h2>
     <p class="work-caption">
       2023 <br>
@@ -199,8 +199,8 @@
     </div>
   </section>  
 
-              <section class="work">
-    <h2 class="work-title">Artist Portrait | Patterson</h2>
+              <section class="work" id="patarson">
+    <h2 class="work-title">Artist Portrait | Paterson</h2>
     <p class="work-caption">
       2025 <br>
     </p>
@@ -214,7 +214,7 @@
 </section>
 
      
-          <section class="work">
+          <section class="work" id="maucore2022">
     <h2 class="work-title">mau collection 2022</h2>
     <p class="work-caption">
       2022 <br>
@@ -226,12 +226,10 @@
       <img src="img/p42b.JPG" alt="mau collection 2022"  />
       
     </div>
-
-
   </section>
 
      
-              <section class="work">
+              <section class="work" id="indulge">
     <h2 class="work-title">indulge</h2>
     <p class="work-caption">
       2024 <br>
@@ -244,7 +242,7 @@
     </div>
   </section>  
 
-                <section class="work">
+                <section class="work" id="kirame">
     <h2 class="work-title">kirame</h2>
     <p class="work-caption">
       2024 <br>
@@ -258,11 +256,9 @@
     </div>
 
 
-             
+  </main>
 
-
-  </div>
 </body>
-
-
 </html>
+
+
